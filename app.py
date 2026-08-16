@@ -8,7 +8,7 @@ st.set_page_config(page_title="Khảo sát trải nghiệm với Vinh", page_ico
 FILE_PATH = "danh_gia_vinh.csv"
 
 st.title("🎮 Phiếu khảo sát trải nghiệm")
-
+6a1821c9-ea31-4281-88eb-a2d1c2cea51a.jpg
 with st.form("khao_sat_form", clear_on_submit=True):
     ten_khach = st.text_input("Tên của bạn")
     
