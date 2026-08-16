@@ -10,6 +10,7 @@ FILE_PATH = "danh_gia_vinh.csv"
 st.title("🎮 Phiếu khảo sát trải nghiệm")
 st.image("6a1821c9-ea31-4281-88eb-a2d1c2cea51a.jpg", caption="Đánh giá Pen Pen", use_container_width=True)
 with st.form("khao_sat_form", clear_on_submit=True):
+    st.audio("Pen Pen Lurk Bait.mp3")
     ten_khach = st.text_input("Tên của bạn")
     
     hai_long_choi = st.slider(
