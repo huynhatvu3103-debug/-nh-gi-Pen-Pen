@@ -62,9 +62,12 @@ with st.form("khao_sat_form", clear_on_submit=True):
             
         st.success("Cảm ơn bạn đã gửi đánh giá!")
 
-# Hiển thị kết quả khảo sát bên dưới
-if os.path.exists(FILE_PATH):
-    st.write("---")
-    st.subheader("📊 Kết quả khảo sát")
-    df = pd.read_csv(FILE_PATH)
-    st.dataframe(df)
+# Tạo phần ẩn bảng bằng mật khẩu
+st.write("---")
+admin_pass = st.text_input("🔐 Nhập mật khẩu Admin để xem kết quả:", type="password")
+
+if admin_pass == "123456":  # Thay 123456 thành mật khẩu của bạn
+    if os.path.exists(FILE_PATH):
+        st.subheader("📊 Kết quả khảo sát")
+        df = pd.read_csv(FILE_PATH)
+        st.dataframe(df)
