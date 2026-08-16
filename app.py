@@ -9,21 +9,7 @@ st.set_page_config(page_title="Khảo sát trải nghiệm với Vinh", page_ico
 # Khai báo biến đường dẫn file csv
 FILE_PATH = "danh_gia_vinh.csv"
 
-# Hàm tự động phát nhạc
-def autoplay_audio(file_path: str):
-    if os.path.exists(file_path):
-        with open(file_path, "rb") as f:
-            data = f.read()
-            b64 = base64.b64encode(data).decode()
-            md = f"""
-                <audio autoplay loop style="display:none;">
-                <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
-                </audio>
-                """
-            st.markdown(md, unsafe_allow_html=True)
-
-# Phát nhạc (Thay "intro_audio.mp3" bằng đúng tên file mp3 trên GitHub của bạn)
-autoplay_audio("intro_audio.mp3")
+st.audio("Pen Pen Lurk Bait.mp3")
 
 st.title("🎮 Phiếu khảo sát trải nghiệm")
 
