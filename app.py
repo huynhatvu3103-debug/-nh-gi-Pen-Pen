@@ -36,3 +36,8 @@ with st.form("khao_sat_form", clear_on_submit=True):
     )
     
     submitted = st.form_submit_button("Gửi đánh giá")
+    # Kiểm tra nếu file dữ liệu đã tồn tại thì hiển thị ra
+if os.path.exists(FILE_PATH):
+    st.subheader("📊 Danh sách kết quả đã gửi")
+    df = pd.read_csv(FILE_PATH)
+    st.dataframe(df)
