@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime
 import os
 import base64
+FILE_PATH = "danh_gia_vinh.csv"
 st.set_page_config(page_title="Khảo sát trải nghiệm với Vinh", page_icon="🎮")
 
 st.title("🎮 Phiếu khảo sát trải nghiệm")
