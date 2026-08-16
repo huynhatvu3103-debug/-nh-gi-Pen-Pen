@@ -2,17 +2,18 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 import os
+import base64
 
 st.set_page_config(page_title="Khảo sát trải nghiệm với Vinh", page_icon="🎮")
 
 FILE_PATH = "danh_gia_vinh.csv"
 
 st.title("🎮 Phiếu khảo sát trải nghiệm")
-st.image("6a1821c9-ea31-4281-88eb-a2d1c2cea51a.jpg", caption="Đánh giá Pen Pen", use_container_width=True)
-with st.form("khao_sat_form", clear_on_submit=True):
-    import base64
 
-# Hàm hỗ trợ tự động phát nhạc từ file local
+# Chèn ảnh
+st.image("6a1821c9-ea31-4281-88eb-a2d1c2cea51a.jpg", caption="Đánh giá Pen Pen", use_container_width=True)
+
+# Hàm tự động phát nhạc
 def autoplay_audio(file_path: str):
     with open(file_path, "rb") as f:
         data = f.read()
@@ -24,8 +25,11 @@ def autoplay_audio(file_path: str):
             """
         st.markdown(md, unsafe_allow_html=True)
 
-# Gọi hàm phát nhạc (Thay "sound.mp3" bằng đúng tên file nhạc của bạn)
-autoplay_audio("Pen Pen Lurk Bait.mp3")
+# Gọi hàm phát nhạc (thay intro_audio.mp3 bằng đúng tên file nhạc của bạn)
+autoplay_audio("intro_audio.mp3")
+
+# Form khảo sát
+with st.form("khao_sat_form", clear_on_submit=True):
     ten_khach = st.text_input("Tên của bạn")
     
     hai_long_choi = st.slider(
